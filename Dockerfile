@@ -3,7 +3,8 @@ FROM mhart/alpine-node:base
 ENV PATH /root/.yarn/bin:$PATH
 
 RUN apk update \
-  && apk add curl bash binutils tar \
+  && apk add bash git openssh \
+  && apk add curl tar binutils \
   && rm -rf /var/cache/apk/* \
   && /bin/bash \
   && touch ~/.bashrc \
