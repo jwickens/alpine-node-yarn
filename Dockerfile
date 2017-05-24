@@ -1,9 +1,9 @@
-FROM mhart/alpine-node:base
+FROM mhart/alpine-node:latest
 
 ENV PATH /root/.yarn/bin:$PATH
 
 RUN apk update \
-  && apk add bash git openssh gzip \
+  && apk add --update bash git openssh gzip \
   && apk add curl tar binutils \
   && rm -rf /var/cache/apk/* \
   && /bin/bash \
